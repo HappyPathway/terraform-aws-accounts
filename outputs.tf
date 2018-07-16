@@ -27,9 +27,9 @@ output "vault_ec2_ro_policy" {
 }
 
 output "console_user" {
-  value = "${module.vault_account.console_user}"
+  value = "${module.iam_vault.console_user}"
 }
 
 output "console_password" {
-  value = "${module.vault_account.console_password}"
+  value = "${module.iam_vault.console_password}"
 }
