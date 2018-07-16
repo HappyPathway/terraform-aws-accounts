@@ -25,3 +25,11 @@ output "vault_ec2_admin_policy" {
 output "vault_ec2_ro_policy" {
   value = "aws-${var.aws_account_name}-ro"
 }
+
+output "console_user" {
+  value = "${module.vault_account.console_user}"
+}
+
+output "console_password" {
+  value = "${module.vault_account.console_password}"
+}
