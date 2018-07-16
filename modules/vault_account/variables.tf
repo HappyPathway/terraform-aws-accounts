@@ -4,12 +4,12 @@ variable "aws_account_name" {
 
 variable "default_lease_ttl" {
   type    = "string"
-  default = "30"
+  default = "300"
 }
 
 variable "max_lease_ttl" {
   type    = "string"
-  default = "90"
+  default = "600"
 }
 
 variable "vault_iam_user" {
