@@ -4,7 +4,7 @@ resource "aws_iam_user" "admin" {
   force_destroy = true
 }
 
-resource "aws_iam_user_policy" "vault_iam_user" {
+resource "aws_iam_user_policy" "admin_user" {
   name = "aws-console-${var.vault_iam_user}"
   user = "${aws_iam_user.admin.name}"
 
