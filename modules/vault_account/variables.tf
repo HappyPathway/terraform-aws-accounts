@@ -19,3 +19,5 @@ variable "vault_iam_user" {
 variable "aws_account_id" {}
 
 variable "aws_role_name" {}
+
+variable "keybase_user" {}

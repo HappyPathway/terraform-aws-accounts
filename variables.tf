@@ -10,3 +10,5 @@ variable "aws_account_role" {
   type    = "string"
   default = ""
 }
+
+variable "keybase_user" {}
