@@ -22,7 +22,7 @@ resource "aws_iam_user_policy" "vault_iam_user" {
 }
 
 resource "vault_aws_secret_backend" "aws" {
-  path                      = "aws-${var.aws_account_name}"
+  path                      = "${var.aws_account_name}/aws"
   access_key                = "${aws_iam_access_key.vault_iam_user.id}"
   secret_key                = "${aws_iam_access_key.vault_iam_user.secret}"
   default_lease_ttl_seconds = "${var.default_lease_ttl}"
@@ -71,11 +71,11 @@ data "template_file" "ec2_admin" {
 }
 
 resource "vault_policy" "ec2_ro" {
-  name   = "aws-${var.aws_account_name}-ro"
+  name   = "${var.aws_account_name}-aws-ro"
   policy = "${data.template_file.ec2_ro.rendered}"
 }
 
 resource "vault_policy" "ec2_admin" {
-  name   = "aws-${var.aws_account_name}-admin"
+  name   = "${var.aws_account_name}-aws-admin"
   policy = "${data.template_file.ec2_admin.rendered}"
 }

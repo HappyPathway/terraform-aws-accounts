@@ -11,19 +11,19 @@ output "account_arn" {
 }
 
 output "vault_ec2_ro_path" {
-  value = "aws-${var.aws_account_name}/creds/ec2_ro"
+  value = "${var.aws_account_name}/aws/creds/ec2_ro"
 }
 
 output "vault_ec2_admin_path" {
-  value = "aws-${var.aws_account_name}/creds/ec2_admin"
+  value = "${var.aws_account_name}/aws/creds/ec2_admin"
 }
 
 output "vault_ec2_admin_policy" {
-  value = "aws-${var.aws_account_name}-admin"
+  value = "${var.aws_account_name}-aws-admin"
 }
 
 output "vault_ec2_ro_policy" {
-  value = "aws-${var.aws_account_name}-ro"
+  value = "${var.aws_account_name}-aws-ro"
 }
 
 output "console_user" {
