@@ -53,29 +53,3 @@ resource "vault_aws_secret_backend_role" "ec2_ro" {
     "vault_aws_secret_backend.aws",
   ]
 }
-
-data "template_file" "ec2_ro" {
-  template = "${file("${path.module}/vault_policies/ec2_ro.hcl.tpl")}"
-
-  vars {
-    account_name = "${var.aws_account_name}"
-  }
-}
-
-data "template_file" "ec2_admin" {
-  template = "${file("${path.module}/vault_policies/ec2_admin.hcl.tpl")}"
-
-  vars {
-    account_name = "${var.aws_account_name}"
-  }
-}
-
-resource "vault_policy" "ec2_ro" {
-  name   = "${var.aws_account_name}-aws-ro"
-  policy = "${data.template_file.ec2_ro.rendered}"
-}
-
-resource "vault_policy" "ec2_admin" {
-  name   = "${var.aws_account_name}-aws-admin"
-  policy = "${data.template_file.ec2_admin.rendered}"
-}
