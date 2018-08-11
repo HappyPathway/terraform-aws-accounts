@@ -10,3 +10,9 @@ variable "aws_account_role" {
   type    = "string"
   default = ""
 }
+
+variable "iam_user_access_to_billing" {
+  type = "string"
+  default = true
+  description = "Allow IAM User access to billing"
+}
