@@ -3,6 +3,7 @@ module "aws_account" {
   aws_account_name  = "${var.aws_account_name}"
   aws_account_email = "${var.aws_account_email}"
   aws_account_role  = "${var.aws_account_role}"
+  iam_user_access_to_billing = "${var.iam_user_access_to_billing}"
 }
 
 module "iam_vault" {
